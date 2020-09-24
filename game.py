@@ -33,9 +33,21 @@ class Game:
             print('Misses: {}'.format(self.misses))
             print(self.active_phrase.display(self.guesses))
 
+        self.game_over()
+
+        
+
     def get_guess(self):
         x = input('Enter a letter: ')
         return x
+
+    def game_over(self):
+        if self.misses == 5:
+            print('I am so sorry you did not win!')
+
+        else:
+            print('Awesome you was able to get the the phrase correct')
+
 
 
 
