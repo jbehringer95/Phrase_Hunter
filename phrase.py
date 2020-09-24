@@ -5,16 +5,14 @@ class Phrase:
         self.phrase = phrase.lower()
 
     def display(self, guesses):
-        for letters in self.phrase:
-            
-            if letters in guesses:
-                print (f'{letters} ', end = '')
-            
-            elif letters != " ":
-                print('_ ', end = '')
-
+        for letter in self.phrase:
+            if letter in guesses:
+                print(f"{letter} ", end = "")
             else:
-                print(end = ' ')
+                print('_ ', end= "")
+
+
+            
 
     def check_guess(self, guess):
         

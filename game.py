@@ -13,7 +13,7 @@ class Game:
             Phrase('May the force be with you')
             ]
         self.active_phrase = self.get_random_phrase()
-        self.guesses = ['']
+        self.guesses = [' ']
 
     def get_random_phrase(self):
         return random.choice(self.phrases)
@@ -26,6 +26,7 @@ class Game:
 
         while self.misses < 5 and self.active_phrase.check_complete(self.guesses) == False:
             print(self.guesses)
+            self.active_phrase.display(self.guesses)
             self.user_guess = self.get_guess()
             if len(self.user_guess) != 1:
                 print('Please only pick one letter')
@@ -33,7 +34,8 @@ class Game:
             if not self.active_phrase.check_guess(self.user_guess):
                 self.misses += 1
             print('Misses: {}'.format(self.misses))
-            print(self.active_phrase.display(self.guesses))
+            
+            
 
         self.game_over()
 
@@ -48,7 +50,7 @@ class Game:
             print('I am so sorry you did not win!')
 
         else:
-            print('Awesome you was able to get the the phrase correct')
+            print('Awesome you was able to get the the phrase correct in {} guesses'.format(len(self.guesses)))
 
 
 
