@@ -10,10 +10,14 @@ class Phrase:
             if letters in guesses:
                 print (f'{letters} ', end = '')
             
-            else:
+            elif letters != " ":
                 print('_ ', end = '')
 
+            else:
+                print(end = ' ')
+
     def check_guess(self, guess):
+        
         if guess in self.phrase:
             return True
         

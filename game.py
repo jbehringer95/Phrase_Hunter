@@ -27,6 +27,8 @@ class Game:
         while self.misses < 5 and self.active_phrase.check_complete(self.guesses) == False:
             print(self.guesses)
             self.user_guess = self.get_guess()
+            if len(self.user_guess) != 1:
+                print('Please only pick one letter')
             self.guesses.append(self.user_guess)
             if not self.active_phrase.check_guess(self.user_guess):
                 self.misses += 1
