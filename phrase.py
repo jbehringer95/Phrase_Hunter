@@ -1,5 +1,3 @@
-
-
 class Phrase:
     def __init__(self, phrase):
         self.phrase = phrase.lower()
@@ -12,13 +10,11 @@ class Phrase:
                 print('_ ', end= "")
 
 
-            
-
     def check_guess(self, guess):
         
         if guess in self.phrase:
             return True
-        
+
         else:
             False
 
@@ -27,4 +23,3 @@ class Phrase:
             if letters not in guesses:
                 return False
         return True
-        
