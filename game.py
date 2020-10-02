@@ -15,12 +15,15 @@ class Game:
         self.active_phrase = self.get_random_phrase()
         self.guesses = [' ']
 
+    
     def get_random_phrase(self):
         return random.choice(self.phrases)
 
+    
     def welcome(self):
         print('Welcome to the the game of Phrase Hunter')
 
+    
     def start(self):
         self.welcome()
 
@@ -40,12 +43,12 @@ class Game:
 
         self.game_over()
 
-        
 
     def get_guess(self):
         x = input('Enter a letter: ')
         return x
 
+    
     def game_over(self):
         if self.misses == 5:
             print('I am so sorry you did not win!')
