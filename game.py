@@ -3,7 +3,7 @@ from phrase import Phrase
 
 
 class Game:
-    
+
     def __init__(self):
         self.misses = 0
         self.phrases = [Phrase('Hello world'),
@@ -15,15 +15,15 @@ class Game:
         self.active_phrase = self.get_random_phrase()
         self.guesses = [' ']
 
-    
+
     def get_random_phrase(self):
         return random.choice(self.phrases)
 
-    
+
     def welcome(self):
         print('Welcome to the the game of Phrase Hunter')
 
-    
+
     def start(self):
         self.welcome()
 
@@ -38,8 +38,8 @@ class Game:
                 if not self.active_phrase.check_guess(self.user_guess):
                     self.misses += 1
                 print('Misses: {}'.format(self.misses))
-            
-            
+
+
 
         self.game_over()
 
@@ -48,16 +48,10 @@ class Game:
         x = input('Enter a letter: ')
         return x
 
-    
+
     def game_over(self):
         if self.misses == 5:
             print('I am so sorry you did not win!')
 
         else:
             print('Awesome you was able to get the the phrase correct in {} guesses'.format(len(self.guesses)))
-
-
-
-
-
-        

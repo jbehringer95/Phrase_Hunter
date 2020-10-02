@@ -11,7 +11,7 @@ class Phrase:
 
 
     def check_guess(self, guess):
-        
+
         if guess in self.phrase:
             return True
 
